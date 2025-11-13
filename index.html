@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card frofile</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/icon.jpg">
+</head>
+<body>
+    <div id="popupMessage"></div>
+    <input type="checkbox" id="infoCheck">
+    <input type="checkbox" id="callCheck">
+    <div class="container">
+        <header>
+            <div class="profile"></div>
+            <p class="name">AMIRHOSSEIN FOTUHI</p>
+            <p class="bio">FrontEnd Deveoper</p>
+        </header>
+        <section>
+            <div class="cardItem">
+                <p class="value">10</p>
+                <p class="title">post</p>
+            </div>
+            <div class="cardItem">
+                <p class="value" id="followersValue">530</p>
+                <p class="title">followers</p>
+            </div>
+            <div class="cardItem">
+                <p class="value">110</p>
+                <p class="title">following</p>
+            </div>
+        </section>
+        <footer>
+            <button class="follow" onclick="followMe()">follow</button>
+            <label for="infoCheck"><img src="./img/info-svgrepo-com.svg" alt="info" title="my info" class="info"></label>
+            <a href="https://github.com/amirCodeX7" target="_blank"><img src="./img/github-142-svgrepo-com.svg" alt="github" title="github page" class="github" ></a>
+            <label for="callCheck"><img src="./img/call-receive-svgrepo-com.svg" alt="call" title="call whit me" class="call"></label>
+            
+        </footer>
+        <script src="script.js"></script>
+    </div>
+</body>
+</html>

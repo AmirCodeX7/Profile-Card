@@ -1,0 +1,246 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  background-color: #1b1f23;
+  margin-top: 5%;
+}
+
+.container {
+  width: 20rem;
+  height: 33.125rem;
+  border-radius: 25px;
+  background: #1b1f23;
+  box-shadow: 28px 28px 56px #0b0c0e, -28px -28px 56px #2b3238;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  position: relative;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.profile {
+  width: 8.125rem;
+  height: 8.125rem;
+  background-image: url(./img/profile.jpg);
+  border-radius: 50%;
+  background-size: cover;
+  border: 5px solid rgb(42, 42, 42);
+  transition: all ease 1s;
+}
+
+.profile:hover {
+  box-shadow: 5px 5px 10px gray, -5px -5px 10px black;
+}
+
+.name {
+  color: #626262;
+  font-weight: bold;
+  font-size: 1.6rem;
+  margin-top: 20px;
+}
+
+.bio {
+  color: #727272;
+  margin-top: 0.5rem;
+}
+
+section {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  text-align: center;
+}
+
+.cardItem {
+  color: #626262;
+}
+
+.cardItem .value {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+footer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  justify-content: center;
+  justify-items: center;
+  gap: 8px 0px;
+}
+
+.follow {
+  font-size: 1.2rem;
+  grid-column: 1/5;
+  width: 250px;
+  border: none;
+  outline: none;
+  height: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #1b1f23;
+  box-shadow: 5px 5px 10px #0f1214, -5px -5px 10px #272c32;
+  color: #626262;
+  transition: all ease 0.5s;
+}
+
+.follow:hover {
+  background-color: #008337;
+  color: #fff;
+}
+
+footer img,
+.info {
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  color: #626262;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px #0f1214, -5px -5px 10px #272c32;
+}
+
+/* دکمه مشخصات */
+#infoCheck {
+  display: none;
+}
+
+/* #infoCheck:checked ~ .container footer .info {
+    visibility: hidden; تصویر داخل label پنهان شود
+} */
+
+#infoCheck:checked ~ .container footer label[for="infoCheck"] {
+  position: absolute;
+  width: 100%;
+  height: 35%;
+  top: 50%; /* برای اینکه از وسط کانتینر شروع شود */
+  transform: translateY(-50%); /* برای هم‌ترازی عمودی */
+  left: 0;
+  background-color: #38404a; /* رنگ پس‌زمینه جدید برای باکس متنی */
+  border-radius: 20px;
+  z-index: 10; /* برای اینکه روی بقیه محتوا قرار گیرد */
+  display: flex; /* برای تنظیم راحت‌تر محتوای متنی */
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transition: all ease 0.5s; /* برای انیمیشن باز شدن */
+}
+
+#infoCheck:checked ~ .container footer label[for="infoCheck"]::before {
+  content: "Hello i'm AmirCodeX \A a Frantend developer";
+  white-space: pre-wrap;
+  opacity: 1; /* اطمینان از نمایش متن */
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: bold;
+  line-height: 1.5;
+  transition: opacity 0.5s ease 0.3s; /* انیمیشن آهسته‌تر برای نمایش متن */
+}
+
+/* #infoCheck:checked img{
+    margin-left: -50px;
+} */
+
+.info::after {
+  display: none;
+}
+.info {
+  transition: all ease 0.5s;
+}
+.info:hover {
+  background-color: #180083;
+}
+
+/* دکمه تماس */
+#callCheck {
+  display: none;
+}
+
+.call {
+  transition: all ease 0.5s;
+}
+.call:hover {
+  background-color: #a31d1d;
+}
+
+#callCheck:checked ~ .container footer label[for="callCheck"] {
+  position: absolute;
+  width: 100%;
+  height: 35%;
+  top: 50%; /* برای اینکه از وسط کانتینر شروع شود */
+  transform: translateY(-50%); /* برای هم‌ترازی عمودی */
+  left: 0;
+  background-color: #38404a; /* رنگ پس‌زمینه جدید برای باکس متنی */
+  border-radius: 20px;
+  z-index: 10; /* برای اینکه روی بقیه محتوا قرار گیرد */
+  display: flex; /* برای تنظیم راحت‌تر محتوای متنی */
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transition: all ease 0.5s; /* برای انیمیشن باز شدن */
+}
+
+#callCheck:checked ~ .container footer label[for="callCheck"]::before {
+  content: "email : amyrhsynftwhy514@gmail.com    number phone : 09137475501";
+  opacity: 1; /* اطمینان از نمایش متن */
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: bold;
+  line-height: 1.5;
+  transition: opacity 0.5s ease 0.3s; /* انیمیشن آهسته‌تر برای نمایش متن */
+}
+
+.github {
+  transition: all ease 0.5s;
+}
+.github:hover {
+  background-color: #5b107e;
+}
+
+/* نمایش پیغام  */
+#popupMessage {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #008337;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  display: none; /* ابتدا مخفی است */
+  z-index: 1000;
+}
+
+
+/* پنهان کردن آیکون Info وقتی پنل Info فعال است */
+/* #infoCheck:checked ~ .container footer label[for="infoCheck"] img {
+    visibility: hidden;
+}
+
+/* پنهان کردن آیکون Call وقتی پنل Call فعال است */
+/* #callCheck:checked ~ .container footer label[for="callCheck"] img {
+    visibility: hidden;
+}
+ */ 
